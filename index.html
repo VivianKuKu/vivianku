@@ -979,6 +979,37 @@
             }
         }
 
+        /* Load More Button */
+        .writing-item.hidden {
+            display: none;
+        }
+
+        .load-more-container {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .load-more-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 2rem;
+            border-radius: 100px;
+            font-family: var(--font-main);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .load-more-btn:hover {
+            border-color: var(--text-primary);
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.5);
+        }
+
         /* Footer / Contact */
         footer {
             margin-top: 10rem;
@@ -1191,6 +1222,16 @@
             </p>
             <ul class="writing-list">
                 <li class="writing-item">
+                    <a href="https://vivian-ku.medium.com/redefining-work-in-the-age-of-ai-the-hardest-part-isnt-the-technology-3361abf3b341"
+                        target="_blank" rel="noopener noreferrer">
+                        <span class="writing-category">Strategy</span>
+                        <div class="writing-title" data-zh="">Redefining Work in the Age of AI: The Hardest Part Isn’t
+                            the Technology</div>
+                        <div class="writing-meta" data-zh="">What building AI with clients has taught me about value,
+                            empathy, and what truly scales</div>
+                    </a>
+                </li>
+                <li class="writing-item">
                     <a href="https://vivian-ku.medium.com/generative-ai-vs-traditional-ai-a-beginners-guide-to-understanding-the-differences-f39923f3127f"
                         target="_blank" rel="noopener noreferrer">
                         <span class="writing-category">Strategy</span>
@@ -1326,6 +1367,36 @@
                 window.history.replaceState(null, null, window.location.pathname);
                 // Optional: Scroll to top if the user wants to reset completely
                 // window.scrollTo(0, 0); 
+            }
+
+            // 0.5 Load More Logic
+            const writingItems = document.querySelectorAll('.writing-item');
+            const maxVisible = 3;
+            if (writingItems.length > maxVisible) {
+                // Hide extra items
+                writingItems.forEach((item, index) => {
+                    if (index >= maxVisible) item.classList.add('hidden');
+                });
+
+                // Create container and button
+                const list = document.querySelector('.writing-list');
+                const btnContainer = document.createElement('div');
+                btnContainer.className = 'load-more-container';
+
+                const btn = document.createElement('button');
+                btn.className = 'load-more-btn';
+                btn.innerText = `Show All (${writingItems.length})`; // e.g. Show All (5)
+
+                btn.onclick = () => {
+                    writingItems.forEach(item => {
+                        item.classList.remove('hidden');
+                        // Optional simple fade in effect could be added here
+                    });
+                    btnContainer.remove(); // Remove button after expanding
+                };
+
+                btnContainer.appendChild(btn);
+                list.parentNode.insertBefore(btnContainer, list.nextSibling);
             }
 
             // 1. Intersection Observer for Scroll Reveals

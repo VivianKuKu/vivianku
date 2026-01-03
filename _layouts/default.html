@@ -1032,11 +1032,13 @@
     </div>
 
     <!-- Language Toggle Link -->
+    {% comment %}
     {% if page.lang == "en" %}
     <a href="{{ site.url }}{{ site.baseurl }}/zh/" class="lang-link">EN / 中</a>
     {% else %}
     <a href="{{ site.url }}{{ site.baseurl }}/" class="lang-link">中 / EN</a>
     {% endif %}
+    {% endcomment %}
 
     <main>
         <header>

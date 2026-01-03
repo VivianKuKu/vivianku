@@ -377,8 +377,8 @@
 
         @media (max-width: 600px) {
             html {
-                scroll-padding-top: 5rem;
-                /* Increased offset for mobile */
+                scroll-padding-top: 8rem;
+                /* Increased offset for mobile to prevent title overlap */
             }
 
             .positioning {
@@ -1321,6 +1321,13 @@
     <script>
         // Initialise Premium Interactions
         document.addEventListener('DOMContentLoaded', () => {
+            // 0. Clean URL Hash on Load (User Preference)
+            if (window.location.hash) {
+                window.history.replaceState(null, null, window.location.pathname);
+                // Optional: Scroll to top if the user wants to reset completely
+                // window.scrollTo(0, 0); 
+            }
+
             // 1. Intersection Observer for Scroll Reveals
             const observerOptions = {
                 threshold: 0.1,

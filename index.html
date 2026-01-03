@@ -105,7 +105,8 @@
             position: absolute;
             border-radius: 50%;
             filter: blur(100px);
-            opacity: 0.12;
+            opacity: 0.15;
+            /* Increased from 0.12 */
             mix-blend-mode: multiply;
         }
 
@@ -179,15 +180,15 @@
 
         /* Color Zoning */
         #about.reveal-visible {
-            background: radial-gradient(circle at 100% 0%, rgba(180, 123, 94, 0.03), transparent 40%);
+            background: radial-gradient(circle at 100% 0%, rgba(180, 123, 94, 0.06), transparent 40%);
         }
 
         #work.reveal-visible {
-            background: radial-gradient(circle at 0% 100%, rgba(74, 90, 106, 0.03), transparent 40%);
+            background: radial-gradient(circle at 0% 100%, rgba(74, 90, 106, 0.06), transparent 40%);
         }
 
         #writing.reveal-visible {
-            background: radial-gradient(circle at 50% 50%, rgba(93, 116, 101, 0.03), transparent 60%);
+            background: radial-gradient(circle at 50% 50%, rgba(93, 116, 101, 0.06), transparent 60%);
         }
 
         /* Layout */
@@ -359,6 +360,21 @@
             }
         }
 
+        /* Utility classes for responsive text */
+        .mobile-text {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .desktop-text {
+                display: none;
+            }
+
+            .mobile-text {
+                display: inline;
+            }
+        }
+
         @media (max-width: 600px) {
             html {
                 scroll-padding-top: 5rem;
@@ -377,27 +393,30 @@
             /* Mobile-adaptive floating navigation - single row */
             .nav-container {
                 top: 1rem;
-                left: 0.5rem;
-                right: 0.5rem;
+                left: 0.2rem;
+                right: 0.2rem;
                 width: auto;
+                justify-content: center;
             }
 
             .primary-links {
-                width: 100%;
+                width: auto;
+                max-width: 100%;
                 flex-wrap: nowrap;
                 /* Keep in one row */
-                justify-content: space-between;
-                gap: 0.2rem;
-                padding: 0.4rem;
-                font-size: 0.5rem;
+                justify-content: center;
+                gap: 0;
+                padding: 0.3rem 0.2rem;
+                font-size: 0.65rem;
                 /* Smaller font for mobile */
-                letter-spacing: 0.05em;
+                letter-spacing: 0.02em;
             }
 
             .primary-links a {
-                padding: 0.45rem 0.5rem;
+                padding: 0.4rem 0.6rem;
                 white-space: nowrap;
-                flex: 1;
+                flex: 0 1 auto;
+                /* Do not force growth, allow natural size */
                 text-align: center;
             }
         }
@@ -563,7 +582,8 @@
             bottom: 2rem;
             right: 6rem;
             /* Left of the Back to Top button */
-            z-index: 1000;
+            z-index: 10001;
+            /* Above navigation (10000) */
             font-family: var(--font-main);
         }
 
@@ -643,10 +663,22 @@
             cursor: pointer;
             opacity: 0.5;
             transition: opacity 0.2s;
+            /* Improved touch target */
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: -10px;
+            /* Compensation for the larger click area */
         }
 
         .chat-close:hover {
             opacity: 1;
+            background: rgba(0, 0, 0, 0.05);
+            /* Subtle feedback */
+            border-radius: 50%;
         }
 
         .chat-body {
@@ -1057,9 +1089,11 @@
             <div class="nav-container">
                 <nav class="primary-links">
                     <a href="#about" data-zh="關於我">About</a>
-                    <a href="#work" data-zh="服務項目">What I Do</a>
+                    <a href="#work" data-zh="服務項目"><span class="desktop-text">What I Do</span><span
+                            class="mobile-text">Work</span></a>
                     <a href="#writing" data-zh="精選文章">Writing</a>
-                    <a href="#contact" data-zh="合作洽談 / 演講邀約">Let's Connect</a>
+                    <a href="#contact" data-zh="合作洽談 / 演講邀約"><span class="desktop-text">Let's Connect</span><span
+                            class="mobile-text">Connect</span></a>
                 </nav>
             </div>
         </header>

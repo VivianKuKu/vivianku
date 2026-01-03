@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.data.content.hero.role[page.lang] }} | Vivian Ku</title>
+    <meta name="description" content="{{ site.data.content.hero.positioning[page.lang] | strip_html | truncate: 160 }}">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%25%22 y=%2254%25%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2270%22>VK</text></svg>">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/">
+    <meta property="og:title" content="Vivian Ku | {{ site.data.content.hero.role[page.lang] }}">
+    <meta property="og:description" content="{{ site.data.content.hero.positioning[page.lang] | strip_html }}">
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/asset/social_preview.png">
+
+    <!-- Canonical & Identity -->
+    <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/">
+    <link rel="me" href="https://linkedin.com/in/vivianku">
+    <link rel="me" href="https://medium.com/@vivian-ku">
+    <link rel="me" href="https://www.threads.com/@viviankuku">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Reset & Base */
+        :root {
+            --bg-color: #FDFDFC;
+            /* Warm off-white, paper-like */
+            --text-primary: #1A1A1A;
+            /* Soft black */
+            --text-secondary: #585858;
+            /* Muted grey */
+            --text-tertiary: #8C8C8C;
+            --accent-color: #4A5A6A;
+            /* Calm Slate Blue */
+            --accent-soft: #E8ECEF;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-headings: 'Playfair Display', serif;
+            --max-width: 720px;
+            --spacing-unit: 1.5rem;
+            --accent-terracotta: #b47b5e;
+            --accent-sage: #5d7465;
+            --accent-blue-deep: #2c3e50;
+            --border-color: rgba(0, 0, 0, 0.08);
+            --card-bg: rgba(255, 255, 255, 0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 6rem;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            background-image: url('background.png');
+            background-size: 600px;
+            background-repeat: repeat;
+            background-blend-mode: multiply;
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 4rem 2rem 6rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Analog Grain Texture */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* Ambient Orbs */
+        .ambient-glow-system {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.15;
+            mix-blend-mode: multiply;
+        }
+
+        .orb-1 {
+            width: 50vw;
+            height: 50vw;
+            background: var(--accent-terracotta);
+            top: -15%;
+            right: -10%;
+            animation: orbFloat 25s infinite alternate ease-in-out;
+        }
+
+        .orb-2 {
+            width: 45vw;
+            height: 45vw;
+            background: var(--accent-sage);
+            bottom: 5%;
+            left: -5%;
+            animation: orbFloat 30s infinite alternate-reverse ease-in-out -5s;
+        }
+
+        .orb-3 {
+            width: 40vw;
+            height: 40vw;
+            background: #a2b9bc;
+            top: 30%;
+            right: 15%;
+            animation: orbFloat 35s infinite alternate ease-in-out -2s;
+        }
+
+        @keyframes orbFloat {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(10%, 15%) scale(1.05);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        a:hover {
+            border-bottom-color: var(--text-primary);
+            color: var(--text-primary);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal.reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #about.reveal-visible {
+            background: radial-gradient(circle at 100% 0%, rgba(180, 123, 94, 0.06), transparent 40%);
+        }
+
+        #work.reveal-visible {
+            background: radial-gradient(circle at 0% 100%, rgba(74, 90, 106, 0.06), transparent 40%);
+        }
+
+        #writing.reveal-visible {
+            background: radial-gradient(circle at 50% 50%, rgba(93, 116, 101, 0.06), transparent 60%);
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 6rem;
+        }
+
+        .amp {
+            font-family: var(--font-main);
+            font-weight: 300;
+            opacity: 0.7;
+            margin: 0 0.15em;
+        }
+
+        header {
+            margin-bottom: 6rem;
+            position: relative;
+            background: rgba(0, 0, 0, 0.012);
+            padding: 4rem 2rem;
+            margin-left: -2rem;
+            margin-right: -2rem;
+            border-radius: 20px;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: -3rem;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border-color), transparent);
+            opacity: 0.5;
+        }
+
+        h1 {
+            font-family: var(--font-headings);
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-family: var(--font-headings);
+            font-size: 4.8rem;
+            line-height: 0.7;
+            margin: 0.5rem 0.75rem 0.2rem 0;
+            color: var(--accent-terracotta);
+            font-weight: 600;
+        }
+
+        .role-list {
+            display: inline-block;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            background: var(--accent-soft);
+            padding: 0.5rem 1.25rem;
+            border-radius: 100px;
+            margin-bottom: 3rem;
+            font-family: var(--font-main);
+            letter-spacing: 0.01em;
+            animation: fadeUp 0.8s ease-out 0.1s backwards;
+        }
+
+        .positioning {
+            font-family: var(--font-headings);
+            font-size: 1.75rem;
+            font-weight: 400;
+            line-height: 1.45;
+            color: var(--text-primary);
+            margin-bottom: 3.5rem;
+            letter-spacing: -0.01em;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1.5rem;
+            animation: fadeUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 4rem;
+            margin-top: 1rem;
+        }
+
+        .about-main p {
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+        }
+
+        .about-pillars {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .pillar-item {
+            position: relative;
+        }
+
+        .pillar-label {
+            display: block;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-sage);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .pillar-text {
+            font-family: var(--font-headings);
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .pillar-text p {
+            margin-bottom: 1.25rem;
+        }
+
+        .pillar-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .mission-callout {
+            margin-top: 3rem;
+            background: rgba(180, 123, 94, 0.04);
+            padding: 2rem;
+            border-left: 3px solid var(--accent-terracotta);
+            border-radius: 0 12px 12px 0;
+            position: relative;
+        }
+
+        .mission-callout p {
+            font-family: var(--font-headings);
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            line-height: 1.5;
+            font-weight: 500;
+            margin-bottom: 0 !important;
+        }
+
+        @media (max-width: 850px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-pillars {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 2rem;
+            }
+        }
+
+        .mobile-text {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .desktop-text {
+                display: none;
+            }
+
+            .mobile-text {
+                display: inline;
+            }
+
+            html {
+                scroll-padding-top: 8rem;
+            }
+
+            .positioning {
+                font-size: 1.4rem;
+                padding-left: 1rem;
+            }
+
+            h1 {
+                font-size: 2.25rem;
+            }
+
+            .nav-container {
+                top: 1rem;
+                left: 0.2rem;
+                right: 0.2rem;
+                width: auto;
+                justify-content: center;
+            }
+
+            .primary-links {
+                width: auto;
+                max-width: 100%;
+                flex-wrap: nowrap;
+                justify-content: center;
+                gap: 0;
+                padding: 0.3rem 0.2rem;
+                font-size: 0.65rem;
+            }
+
+            .primary-links a {
+                padding: 0.4rem 0.6rem;
+                white-space: nowrap;
+                flex: 0 1 auto;
+                text-align: center;
+            }
+        }
+
+        h2 {
+            font-family: var(--font-main);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .nav-container {
+            position: fixed;
+            top: 2rem;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 10000;
+            pointer-events: none;
+        }
+
+        .primary-links {
+            display: flex;
+            gap: 0.25rem;
+            font-size: 0.8rem;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            padding: 0.35rem;
+            border-radius: 100px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards;
+            font-family: var(--font-main);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            width: max-content;
+            pointer-events: auto;
+        }
+
+        .primary-links a {
+            padding: 0.4rem 1.1rem;
+            border-radius: 100px;
+            border: 1px solid transparent;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .primary-links a:hover {
+            background: var(--accent-terracotta);
+            color: white;
+        }
+
+        .portrait-container {
+            margin-bottom: 3rem;
+            animation: fadeUp 0.8s ease-out backwards;
+        }
+
+        .portrait {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            background-color: var(--accent-soft);
+            display: block;
+        }
+
+        .lang-link {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            font-family: var(--font-main);
+            font-size: 0.9rem;
+            cursor: pointer;
+            z-index: 1000;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .lang-link:hover {
+            color: var(--text-primary);
+            border-color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .back-to-top:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: translateY(-3px);
+            color: var(--text-primary);
+            border-color: var(--text-primary);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .back-to-top svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        /* Chat Widget Styles - Copied directly */
+        .chat-widget {
+            position: fixed;
+            bottom: 2rem;
+            right: 6rem;
+            z-index: 10001;
+            font-family: var(--font-main);
+        }
+
+        .chat-trigger {
+            background: var(--text-primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 100px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .chat-trigger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            background: var(--accent-blue-deep);
+        }
+
+        .chat-window {
+            position: absolute;
+            bottom: 4rem;
+            right: 0;
+            width: 320px;
+            max-height: 450px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .chat-window.open {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+
+        .chat-header {
+            padding: 1.25rem;
+            background: var(--accent-soft);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .chat-header h4 {
+            font-family: var(--font-headings);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .chat-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        .chat-close {
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: -10px;
+        }
+
+        .chat-close:hover {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+        }
+
+        .chat-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            scroll-behavior: smooth;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            animation: fadeUp 0.4s ease-out;
+        }
+
+        .message.bot {
+            background: white;
+            color: var(--text-primary);
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .message.user {
+            background: var(--accent-color);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+        }
+
+        .chat-options {
+            padding: 1rem 1.25rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .opt-btn {
+            background: white;
+            border: 1px solid var(--border-color);
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--text-secondary);
+        }
+
+        .opt-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            background: var(--accent-soft);
+            transform: translateX(4px);
+        }
+
+        .typing {
+            display: flex;
+            gap: 4px;
+            padding: 4px 0;
+        }
+
+        .dot {
+            width: 4px;
+            height: 4px;
+            background: var(--text-tertiary);
+            border-radius: 50%;
+            animation: dotWave 1.4s infinite linear;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes dotWave {
+
+            0%,
+            60%,
+            100% {
+                transform: translateY(0);
+            }
+
+            30% {
+                transform: translateY(-4px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chat-window {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                max-height: 100%;
+                border-radius: 0;
+            }
+
+            .chat-widget {
+                bottom: 1.5rem;
+                right: 5rem;
+            }
+        }
+
+        .cards-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.9);
+            border-color: var(--border-color);
+        }
+
+        .card:nth-child(1):hover {
+            border-color: var(--accent-color);
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(74, 90, 106, 0.05));
+        }
+
+        .card:nth-child(2):hover {
+            border-color: var(--accent-terracotta);
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(180, 123, 94, 0.05));
+        }
+
+        .card:nth-child(3):hover {
+            border-color: var(--accent-sage);
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(93, 116, 101, 0.05));
+        }
+
+        .card h3 {
+            font-family: var(--font-headings);
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .card ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0.25rem;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .writing-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+
+        .writing-item {
+            border-bottom: 1px solid var(--border-color);
+            transition: border-color 0.3s ease;
+        }
+
+        .writing-item:last-child {
+            border-bottom: none;
+        }
+
+        .writing-item a {
+            display: block;
+            padding: 2.5rem 0;
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .writing-item a:hover {
+            padding-left: 1rem;
+        }
+
+        .writing-item:hover {
+            border-color: var(--accent-terracotta);
+        }
+
+        .writing-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .writing-title {
+            font-family: var(--font-headings);
+            font-size: 1.75rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .writing-item a:hover .writing-title {
+            color: var(--accent-color);
+        }
+
+        .writing-meta {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            max-width: 45rem;
+            opacity: 0.8;
+        }
+
+        .writing-item a::after {
+            content: "→";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%) translateX(-20px);
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .writing-item a:hover::after {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+        }
+
+        @media (max-width: 768px) {
+            .writing-title {
+                font-size: 1.4rem;
+            }
+
+            .writing-item a {
+                padding: 1.5rem 0;
+            }
+
+            .writing-item a:hover {
+                padding-left: 0;
+            }
+
+            .writing-item a::after {
+                display: none;
+            }
+        }
+
+        .writing-item.hidden {
+            display: none;
+        }
+
+        .load-more-container {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .load-more-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 2rem;
+            border-radius: 100px;
+            font-family: var(--font-main);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .load-more-btn:hover {
+            border-color: var(--text-primary);
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        footer {
+            margin-top: 10rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-bottom: 4rem;
+        }
+
+        .footer-credit {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            width: 100%;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+        }
+
+        .contact-links a {
+            border-bottom: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .contact-links a:hover {
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .contact-links svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ambient-glow-system">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Language Toggle Link -->
+    {% if page.lang == "en" %}
+    <a href="{{ site.url }}{{ site.baseurl }}/zh/" class="lang-link">EN / 中</a>
+    {% else %}
+    <a href="{{ site.url }}{{ site.baseurl }}/" class="lang-link">中 / EN</a>
+    {% endif %}
+
+    <main>
+        <header>
+            <div class="portrait-container">
+                <img src="{{ site.url }}{{ site.baseurl }}/asset/portrait_placeholder.jpg" alt="Vivian Ku Portrait"
+                    class="portrait" width="80" height="80">
+            </div>
+
+            <h1>Vivian Ku</h1>
+            <div class="role-list">{{ site.data.content.hero.role[page.lang] }}</div>
+
+            <p class="positioning">{{ site.data.content.hero.positioning[page.lang] }}</p>
+
+            <div class="nav-container">
+                <nav class="primary-links">
+                    <a href="#about">{{ site.data.content.nav.about[page.lang] }}</a>
+                    <a href="#work"><span class="desktop-text">{{ site.data.content.nav.work[page.lang] }}</span><span
+                            class="mobile-text">{{ site.data.content.nav.work_mobile[page.lang] }}</span></a>
+                    <a href="#writing">{{ site.data.content.nav.writing[page.lang] }}</a>
+                    <a href="#contact"><span class="desktop-text">{{ site.data.content.nav.connect[page.lang]
+                            }}</span><span class="mobile-text">{{ site.data.content.nav.connect_mobile[page.lang]
+                            }}</span></a>
+                </nav>
+            </div>
+        </header>
+
+        <section id="about" class="reveal" style="position: relative; padding-left: 0.5rem;">
+            <h2>{{ site.data.content.about.title[page.lang] }}</h2>
+            <div class="about-grid">
+                <div class="about-main">
+                    <p class="drop-cap">{{ site.data.content.about.main.p1[page.lang] }}</p>
+                    <p>{{ site.data.content.about.main.p2[page.lang] }}</p>
+                    <div class="mission-callout">
+                        <p>{{ site.data.content.about.mission[page.lang] }}</p>
+                    </div>
+                </div>
+
+                <div class="about-pillars">
+                    <div class="pillar-item">
+                        <span class="pillar-label">{{ site.data.content.about.pillars.speaking.label[page.lang]
+                            }}</span>
+                        <div class="pillar-text">{{ site.data.content.about.pillars.speaking.text[page.lang] }}</div>
+                    </div>
+                    <div class="pillar-item">
+                        <span class="pillar-label">{{ site.data.content.about.pillars.community.label[page.lang]
+                            }}</span>
+                        <div class="pillar-text">{{ site.data.content.about.pillars.community.text[page.lang] }}</div>
+                    </div>
+                    <div class="pillar-item">
+                        <span class="pillar-label">{{ site.data.content.about.pillars.location.label[page.lang]
+                            }}</span>
+                        <div class="pillar-text">{{ site.data.content.about.pillars.location.text[page.lang] }}</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="reveal">
+            <h2>{{ site.data.content.work.title[page.lang] }}</h2>
+            <div class="cards-grid">
+                {% for card in site.data.content.work.cards %}
+                <div class="card">
+                    <h3>{{ card.title[page.lang] }}</h3>
+                    <p>{{ card.desc[page.lang] }}</p>
+                    <ul>
+                        {% for item in card.items[page.lang] %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="writing" class="reveal">
+            <h2>{{ site.data.content.writing.title[page.lang] }}</h2>
+            <p
+                style="margin-bottom: 2rem; color: var(--text-secondary); font-size: 0.95rem; font-weight: 300; opacity: 0.9;">
+                {{ site.data.content.writing.intro[page.lang] }}
+                <br>
+                <span style="font-size: 0.85rem; font-weight: 500; color: var(--accent-color);">{{
+                    site.data.content.writing.link_text[page.lang] }} <a href="https://medium.com/@vivian-ku"
+                        target="_blank"
+                        style="border-bottom-color: var(--accent-color); color: var(--accent-color);">Medium</a>.</span>
+            </p>
+            <ul class="writing-list">
+                {% for post in site.data.content.writing.items %}
+                <li class="writing-item">
+                    <a href="{{ post.url }}" target="_blank" rel="noopener noreferrer">
+                        <span class="writing-category">{{ post.category }}</span>
+                        <div class="writing-title">{{ post.title[page.lang] }}</div>
+                        <div class="writing-meta">{{ post.meta[page.lang] }}</div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section id="contact" class="reveal" style="margin-bottom: 12rem;">
+            <h2>{{ site.data.content.contact.title[page.lang] }}</h2>
+            <div style="max-width: 42rem;">
+                <p
+                    style="font-family: var(--font-headings); font-size: 1.6rem; line-height: 1.4; color: var(--text-primary); margin-bottom: 1.5rem;">
+                    {{ site.data.content.contact.text[page.lang] }}
+                </p>
+                <a href="mailto:vivianku.future@gmail.com"
+                    style="font-size: 1.2rem; font-weight: 500; color: var(--text-primary); border-bottom: none; background: none; backdrop-filter: none; padding: 0;">
+                    vivianku.future@gmail.com
+                </a>
+        </section>
+
+        <footer id="contact" class="reveal">
+            <div style="max-width: 25rem;">
+                <p>{{ site.data.content.contact.footer_bio[page.lang] }}</p>
+            </div>
+
+            <nav class="contact-links">
+                <a href="mailto:vivianku.future@gmail.com" aria-label="Email" title="Email">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/in/vivianku" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn" title="LinkedIn">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+                <a href="https://medium.com/@vivian-ku" target="_blank" rel="noopener noreferrer" aria-label="Medium"
+                    title="Medium">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
+                    </svg>
+                </a>
+                <a href="https://www.threads.com/@viviankuku" target="_blank" rel="noopener noreferrer"
+                    aria-label="Threads" title="Threads">
+                    <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" style="width: 18px; height: 18px;">
+                        <path
+                            d="M141.537 88.9883C140.71 88.5919 139.87 88.2104 139.019 87.8451C137.537 60.5382 122.616 44.905 97.5619 44.745C97.4484 44.7443 97.3355 44.7443 97.222 44.7443C82.2364 44.7443 69.7731 51.1409 62.102 62.7807L75.881 72.2328C81.6116 63.5383 90.6052 61.6848 97.2286 61.6848C97.3051 61.6848 97.3819 61.6848 97.4576 61.6855C105.707 61.7381 111.932 64.1366 115.961 68.814C118.893 72.2193 120.854 76.925 121.825 82.8638C114.511 81.6207 106.601 81.2385 98.145 81.7233C74.3247 83.0954 59.0111 96.9879 60.0396 116.292C60.5615 126.084 65.4397 134.508 73.775 140.011C80.8224 144.663 89.899 146.938 99.3323 146.423C111.79 145.74 121.563 140.987 128.381 132.296C133.559 125.696 136.834 117.143 138.28 106.366C144.217 109.949 148.617 114.664 151.047 120.332C155.179 129.967 155.42 145.8 142.501 158.708C131.182 170.016 117.576 174.908 97.0135 175.059C74.2042 174.89 56.9538 167.575 45.7381 153.317C35.2355 139.966 29.8077 120.682 29.6052 96C29.8077 71.3178 35.2355 52.0336 45.7381 38.6827C56.9538 24.4249 74.2039 17.11 97.0132 16.9405C119.988 17.1113 137.539 24.4614 149.184 38.788C154.894 45.8136 159.199 54.6488 162.037 64.9503L178.184 60.6422C174.744 47.9622 169.331 37.0357 161.965 27.974C147.036 9.60668 125.202 0.195148 97.0695 0H96.9569C68.8816 0.19447 47.2921 9.6418 32.7883 28.0793C19.8819 44.4864 13.2244 67.3157 13.0007 95.9325L13 96L13.0007 96.0675C13.2244 124.684 19.8819 147.514 32.7883 163.921C47.2921 182.358 68.8816 191.806 96.9569 192H97.0695C122.03 191.827 139.624 185.292 154.118 170.811C173.081 151.866 172.51 128.119 166.26 113.541C161.776 103.087 153.227 94.5962 141.537 88.9883ZM98.4405 129.507C88.0005 130.095 77.1544 125.409 76.6196 115.372C76.2232 107.93 81.9158 99.626 99.0812 98.6368C101.047 98.5234 102.976 98.468 104.871 98.468C111.106 98.468 116.939 99.0737 122.242 100.233C120.264 124.935 108.662 128.946 98.4405 129.507Z" />
+                    </svg>
+                </a>
+            </nav>
+        </footer>
+
+        <button class="back-to-top" aria-label="Back to top">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
+            </svg>
+        </button>
+
+        <div class="chat-widget" id="vivianChat">
+            <button class="chat-trigger" onclick="toggleChat()"><span>✨</span> Digital VK</button>
+            <div class="chat-window" id="chatWindow">
+                <div class="chat-header">
+                    <div style="flex: 1;">
+                        <h4>Digital VK</h4>
+                        <div class="chat-subtitle">A small experiment exploring how an AI version of me might respond.
+                        </div>
+                    </div>
+                    <span class="chat-close" onclick="toggleChat()">✕</span>
+                </div>
+                <div class="chat-body" id="chatBody"></div>
+                <div class="chat-options" id="chatOptions"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Clean URL Hash
+            if (window.location.hash) {
+                window.history.replaceState(null, null, window.location.pathname);
+            }
+
+            // Load More Logic
+            const writingItems = document.querySelectorAll('.writing-item');
+            const maxVisible = 3;
+            if (writingItems.length > maxVisible) {
+                writingItems.forEach((item, index) => {
+                    if (index >= maxVisible) item.classList.add('hidden');
+                });
+                const list = document.querySelector('.writing-list');
+                const btnContainer = document.createElement('div');
+                btnContainer.className = 'load-more-container';
+                const btn = document.createElement('button');
+                btn.className = 'load-more-btn';
+                btn.innerText = `Show All (${writingItems.length})`;
+                btn.onclick = () => {
+                    writingItems.forEach(item => item.classList.remove('hidden'));
+                    btnContainer.remove();
+                };
+                btnContainer.appendChild(btn);
+                list.parentNode.insertBefore(btnContainer, list.nextSibling);
+            }
+
+            // Scroll Reveal
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('reveal-visible');
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            // Navigation State
+            const nav = document.querySelector('.primary-links');
+            if (nav) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 100) {
+                        nav.style.background = 'rgba(255, 255, 255, 0.7)';
+                        nav.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.08)';
+                        nav.style.border = '1px solid var(--border-color)';
+                    } else {
+                        nav.style.background = 'rgba(255, 255, 255, 0.4)';
+                        nav.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.05)';
+                        nav.style.border = '1px solid rgba(255, 255, 255, 0.5)';
+                    }
+                });
+            }
+        });
+
+        // Back to Top
+        const backToTopBtn = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) backToTopBtn.classList.add('visible');
+            else backToTopBtn.classList.remove('visible');
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Chat Logic
+        const chatWindow = document.getElementById('chatWindow');
+        const chatBody = document.getElementById('chatBody');
+        const chatOptions = document.getElementById('chatOptions');
+        let chatOpen = false;
+
+        // Chat Data - We can keep this in JS for now as it's interactive
+        const chatData = {
+            start: {
+                message: "I'm so glad you're here! I'd love to share a bit more about my work and how I see the AI era. What would you like to explore together?",
+                options: [
+                    { text: "What drives your work?", step: "principles" },
+                    { text: "My take on AI Strategy", step: "strategy" },
+                    { text: "Human-Centred AI", step: "hcai" },
+                    { text: "Visions for Future Cities", step: "futurecities" },
+                    { text: "How can we collaborate?", step: "collab" }
+                ]
+            },
+            hcai: {
+                message: "To me, Human-Centred AI is about ensuring technology serves people, not the other way around. I focus on bridging the gap between technical teams and end-users to ensure AI systems are something people can actually trust and adopt.",
+                options: [
+                    { text: "See my writing on this", url: "https://medium.com/@vivian-ku" },
+                    { text: "Something else?", step: "start" }
+                ]
+            },
+            principles: {
+                message: "I get most excited when a non‑technical team says ‘this actually helps me think,’ not ‘wow, that’s clever AI’—that’s the bar I hold my work to. Lately, I’ve been fascinated by how my cross‑city work between London and Taipei is changing the way I imagine AI governance.",
+                options: [
+                    { text: "Tell me more about Strategy", step: "strategy" },
+                    { text: "Something else?", step: "start" }
+                ]
+            },
+            futurecities: {
+                message: "I’m quietly obsessed with how future cities will feel to live in—not just their data or infrastructure, but the small, everyday decisions shaped by AI. If you're curious, I've written about building civic trust in smart cities. I also share glimpses of my UK life on Threads if you'd like to see the everyday side of things!",
+                options: [
+                    { text: "Read the article", url: "https://vivian-ku.medium.com/%E6%99%BA%E6%85%B7%E5%9F%8E%E5%B8%82%E7%82%BA%E4%BB%80%E9%BA%BC%E4%B8%8D%E8%A2%AB%E6%94%AF%E6%8C%81-%E7%9C%8B%E4%B8%8D%E8%A2%AB%E7%9A%84%E7%A7%91%E6%8A%80%E6%9C%80%E5%8F%AF%E6%80%95-%E4%B8%89%E5%80%8B%E4%BF%9D%E8%AD%B7%E9%9A%B1%E7%A7%81%E6%AC%8A%E8%88%87%E5%BB%BA%E7%AB%8B%E5%85%AC%E6%B0%91%E4%BF%A1%E4%BB%BB%E7%9A%84%E5%9C%8B%E9%9A%96%E6%A1%88%E4%BE%8B-2c39432475ee" },
+                    { text: "Follow on Threads", url: "https://www.threads.com/@viviankuku" },
+                    { text: "Something else?", step: "start" }
+                ]
+            },
+            strategy: {
+                message: "I help organisations define AI roadmaps that aren't just technically feasible, but strategically sound and responsible. I love digging into the quiet, unglamorous work of making AI usable for real decisions, whether in London or Taipei.",
+                options: [
+                    { text: "See what I've built", step: "backToWork" },
+                    { text: "Something else?", step: "start" }
+                ]
+            },
+            collab: {
+                message: "I'm always open to talking about AI product leadership, strategy consulting, or speaking opportunities. I'd love to hear what you're working on!",
+                options: [
+                    { text: "Let's connect", step: "contact" },
+                    { text: "Something else?", step: "start" }
+                ]
+            },
+            backToWork: {
+                message: "I've put together some details on my services in the 'What I Do' section. Would you like me to take you there?",
+                options: [
+                    { text: "Yes, please!", step: "scrollToWork" },
+                    { text: "Not now, another question", step: "start" }
+                ]
+            }
+        };
+
+        function toggleChat() {
+            chatOpen = !chatOpen;
+            chatWindow.classList.toggle('open');
+            if (chatOpen && chatBody.children.length === 0) {
+                renderStep('start');
+            }
+        }
+
+        async function renderStep(stepId) {
+            chatOptions.innerHTML = '';
+            const step = chatData[stepId];
+            if (stepId === 'contact') { window.location.hash = 'contact'; toggleChat(); return; }
+            if (stepId === 'scrollToWork') { window.location.hash = 'work'; toggleChat(); return; }
+            if (stepId === 'scrollToAbout') { window.location.hash = 'about'; toggleChat(); return; }
+
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message bot typing-indicator';
+            typingDiv.innerHTML = '<div class="typing"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>';
+            chatBody.appendChild(typingDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            await new Promise(r => setTimeout(r, 1000));
+            chatBody.removeChild(typingDiv);
+            addMessage(step.message, 'bot');
+
+            step.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'opt-btn';
+                btn.innerText = opt.text;
+                btn.onclick = () => {
+                    if (opt.url) {
+                        window.open(opt.url, '_blank');
+                    } else {
+                        addMessage(opt.text, 'user');
+                        renderStep(opt.step);
+                    }
+                };
+                chatOptions.appendChild(btn);
+            });
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function addMessage(text, sender) {
+            const div = document.createElement('div');
+            div.className = `message ${sender}`;
+            div.innerText = text;
+            chatBody.appendChild(div);
+        }
+    </script>
+</body>
+
+</html>

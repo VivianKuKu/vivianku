@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.data.content.hero.role[page.lang] }} | Vivian Ku</title>
+    <title>{{ site.data.content.hero.role[page.lang] | strip_html }} | Vivian Ku</title>
     <meta name="description" content="{{ site.data.content.hero.positioning[page.lang] | strip_html | truncate: 160 }}">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%25%22 y=%2254%25%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2270%22>VK</text></svg>">
@@ -12,7 +12,7 @@
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/">
-    <meta property="og:title" content="Vivian Ku | {{ site.data.content.hero.role[page.lang] }}">
+    <meta property="og:title" content="Vivian Ku | {{ site.data.content.hero.role[page.lang] | strip_html }}">
     <meta property="og:description" content="{{ site.data.content.hero.positioning[page.lang] | strip_html }}">
     <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/asset/social_preview.png">
 

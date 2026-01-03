@@ -360,6 +360,11 @@
         }
 
         @media (max-width: 600px) {
+            html {
+                scroll-padding-top: 5rem;
+                /* Increased offset for mobile */
+            }
+
             .positioning {
                 font-size: 1.4rem;
                 padding-left: 1rem;
@@ -369,7 +374,7 @@
                 font-size: 2.25rem;
             }
 
-            /* Mobile-adaptive floating navigation */
+            /* Mobile-adaptive floating navigation - single row */
             .nav-container {
                 top: 1rem;
                 left: 0.5rem;
@@ -379,18 +384,21 @@
 
             .primary-links {
                 width: 100%;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.35rem;
-                padding: 0.5rem;
-                font-size: 0.6rem;
+                flex-wrap: nowrap;
+                /* Keep in one row */
+                justify-content: space-between;
+                gap: 0.2rem;
+                padding: 0.4rem;
+                font-size: 0.5rem;
+                /* Smaller font for mobile */
+                letter-spacing: 0.05em;
             }
 
             .primary-links a {
-                padding: 0.5rem 0.8rem;
-                flex: 1 1 auto;
+                padding: 0.45rem 0.5rem;
+                white-space: nowrap;
+                flex: 1;
                 text-align: center;
-                min-width: calc(50% - 0.2rem);
             }
         }
 

@@ -1140,7 +1140,7 @@
                         style="border-bottom-color: var(--accent-color); color: var(--accent-color);">Medium</a>.</span>
             </p>
             <ul class="writing-list">
-                {% for post in site.writing %}
+                {% for post in site.writing | sort: 'order' %}
                 <li class="writing-item">
                     <a href="{{ post.url }}" target="_blank" rel="noopener noreferrer">
                         <span class="writing-category">{{ post.category }}</span>

@@ -1,5 +1,6 @@
 ---
 category: Strategy
+order: 4
 title:
   en: "Generative AI vs. Traditional AI: A Guide to Understanding the Differences"
   zh: "生成式 AI vs. 傳統 AI：理解差異指南"

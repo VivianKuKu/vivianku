@@ -1,5 +1,6 @@
 ---
 category: Infrastructure
+order: 7
 title:
   en: "Decoding the Digital Twin: Understanding its Anatomy"
   zh: "解碼數位分身：了解其解剖結構"

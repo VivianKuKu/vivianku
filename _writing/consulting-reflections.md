@@ -1,5 +1,6 @@
 ---
 category: Reflections
+order: 6
 title:
   en: "AI 與數位轉型顧問筆記：五個實戰反思"
   zh: "AI 與數位轉型顧問筆記：五個實戰反思"

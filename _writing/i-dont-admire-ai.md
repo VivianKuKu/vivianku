@@ -1,5 +1,6 @@
 ---
 category: Strategy
+order: 2
 title:
   en: "I Don't Admire AI. I Admire People who Build with AI."
   zh: "I Don't Admire AI. I Admire People who Build with AI."

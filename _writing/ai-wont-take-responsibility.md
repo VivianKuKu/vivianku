@@ -1,5 +1,6 @@
 ---
 category: Product
+order: 1
 title:
   en: "AI Won’t Take Responsibility. Your AI Product Does."
   zh: "AI Won’t Take Responsibility. Your AI Product Does."

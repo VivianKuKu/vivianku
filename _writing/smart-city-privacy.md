@@ -1,5 +1,6 @@
 ---
 category: Governance
+order: 5
 title:
   en: "Smart City Privacy & Public Trust"
   zh: "智慧城市隱私與公眾信任"

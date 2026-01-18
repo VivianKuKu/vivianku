@@ -1,5 +1,6 @@
 ---
 category: Strategy
+order: 3
 title:
   en: "Redefining Work in the Age of AI: The Hardest Part Isn’t the Technology"
   zh: "重定義 AI 時代的工作：最難的不是技術"

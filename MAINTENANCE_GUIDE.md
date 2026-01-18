@@ -11,8 +11,9 @@ This guide helps you maintain your bilingual website. The site now uses **Jekyll
 3. [Language Toggle Settings](#language-toggle-settings)
 4. [Updating Digital Vivian Chatbot](#updating-digital-vivian-chatbot)
 5. [Customizing Design](#customizing-design)
-6. [Publishing Changes](#publishing-changes)
-7. [Troubleshooting](#troubleshooting)
+6. [Running Locally](#running-locally)
+7. [Publishing Changes](#publishing-changes)
+8. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -160,6 +161,31 @@ Find the `:root` variables at the top of the `<style>` block:
 
 ### 2. Changing Fonts
 Find the Google Fonts link in the `<head>` section and the Font Family variables in `:root`.
+
+---
+
+---
+
+## Running Locally
+
+To preview your site on your own computer:
+
+### 1. Prerequisites (macOS Silicon)
+You need to use Homebrew's Ruby instead of the system default.
+
+```bash
+# Install Ruby via Homebrew
+brew install ruby
+```
+
+### 2. Start the Server
+Use this command to force your terminal to use the correct Ruby version and start the site:
+
+```bash
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH" && bundle install && bundle exec jekyll serve
+```
+
+Open **[http://localhost:4000/vivianku/](http://localhost:4000/vivianku/)** in your browser.
 
 ---
 

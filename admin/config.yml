@@ -1,5 +1,7 @@
 backend:
   name: git-gateway
+  identity_url: "https://clinquant-klepon-e53f4f.netlify.app/.netlify/identity"
+  gateway_url: "https://clinquant-klepon-e53f4f.netlify.app/.netlify/git/github"
 
 local_backend: true
 

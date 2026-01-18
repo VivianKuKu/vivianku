@@ -18,62 +18,77 @@ This guide helps you maintain your bilingual website. The site now uses **Jekyll
 
 ## Site Overview
 
-Your website is no longer just one file. It is a system that builds pages for you:
+Your website is a system that builds pages for you:
 
-*   **`_data/content.yml`**: **ALL TEXT lives here.** (Bio, Articles, Service descriptions).
-*   **`_layouts/default.html`**: **THE DESIGN lives here.** (HTML structure, CSS styling, Javascript logic).
-*   **`index.html` & `zh/index.html`**: These are just "entry points" that tell the system which language to load. **Do not edit these.**
+*   **`admin/`**: **THE CMS lives here.** (Access `/admin` on your site to edit content visually).
+*   **`_writing/`**: **BLOG POSTS live here.** Each article is a separate file.
+*   **`_data/content.yml`**: **GLOBAL TEXT lives here.** (Navigation, Hero, About me, Services).
+*   **`_layouts/default.html`**: **THE DESIGN lives here.**
 
 ---
 
-## Managing Bilingual Content
+## Managing Content with Decap CMS
 
-**Location:** `_data/content.yml`
+**CMS URL:** `https://your-username.github.io/vivianku/admin`
 
-This is the most common task. All text is stored in "blocks" with `en` (English) and `zh` (Chinese) keys.
+The best way to manage your site is through the **Decap CMS** interface. However, because your site is hosted on GitHub Pages, you need to enable the "Login" backend first.
 
-### 1. Updating Text
-Find the section you want to change (e.g., `hero`, `about`) and edit the text inside the quotes.
+### 0. Initial Setup (One-time only)
+
+To allow logging in to your `/admin` page, we use **Netlify Identity** (Free).
+
+1.  **Sign up for Netlify:** Go to [netlify.com](https://www.netlify.com/) and sign up with your GitHub account.
+2.  **New Site from Git:** Click "Add new site" -> "Import an existing project" -> "GitHub".
+3.  **Select Repository:** Choose your `vivianku` repository.
+4.  **Deploy:** Click "Deploy" (Using the default settings is fine, we mainly need the key feature).
+5.  **Enable Identity:**
+    *   Go to **Site Settings** -> **Identity**.
+    *   Click **Enable Identity**.
+    *   Under **Registration preferences**, select **Invite only** (so random people can't sign up).
+    *   Under **Services** -> **Git Gateway**, click **Enable Git Gateway**.
+6.  **Invite Yourself:**
+    *   Go to the **Identity** tab at the top.
+    *   Click **Invite users** and enter your email.
+    *   Check your email and click the confirmation link.
+
+**IMPORTANT:** Once this is set up, you can go to `your-site-url/admin` and log in!
+
+### 1. Adding a New Writing Piece
+1.  Log in to the `/admin` dashboard.
+2.  Click **Selected Writing** -> **New Selected Writing**.
+3.  Fill in the English and Chinese fields.
+4.  Click **Publish** -> **Publish now**. 
+5.  Wait about 1-2 minutes for your website to update.
+
+### 2. Updating Hero, About, or Services
+1.  In the CMS, click **Site Content** -> **Global Content**.
+2.  Edit any text (biographies, service descriptions, navigation labels).
+3.  Click **Publish**.
+
+---
+
+## Managing Content (The Manual Way)
+
+If you prefer to edit files directly in your code editor:
+
+### 1. Adding a New Article
+Create a new `.md` file in `_writing/` (e.g., `my-new-post.md`):
 
 ```yaml
-hero:
-  role:
-    en: "AI Strategy Leader"    <-- English
-    zh: "AI 策略負責人"           <-- Chinese
+---
+category: Strategy
+title:
+  en: "English Title"
+  zh: "中文標題"
+meta:
+  en: "English summary..."
+  zh: "中文摘要..."
+url: "https://link-to-article.com"
+---
 ```
 
-### 2. Adding a New Article
-Scroll to the `writing: -> items:` section in `_data/content.yml`. Add a new block:
-
-```yaml
-  - category: "Strategy"
-    title:
-      en: "Your New Article Title"
-      zh: "新文章標題"
-    meta:
-      en: "Short description in English."
-      zh: "简短的中文描述。"
-    url: "https://your-article-link.com"
-```
-
-### 3. Adding a New Service
-Scroll to the `work: -> cards:` section. Add a new block:
-
-```yaml
-    - title:
-        en: "New Service"
-        zh: "新服務"
-      desc:
-        en: "Description of what you do."
-        zh: "服務描述。"
-      items:
-        en:
-          - "Service Point 1"
-          - "Service Point 2"
-        zh:
-          - "服務重點 1"
-          - "服務重點 2"
-```
+### 2. Updating Bio or Services
+Edit `_data/content.yml`. All text is organized by section with `en` and `zh` keys.
 
 ---
 

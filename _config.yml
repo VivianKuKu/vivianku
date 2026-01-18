@@ -4,3 +4,6 @@ url: "https://viviankuku.github.io"
 baseurl: "/vivianku"
 permalink: pretty
 google_analytics: "G-9PD8HRG94M"
+collections:
+  writing:
+    output: false

@@ -124,47 +124,6 @@ writing:
   link_text:
     en: "Read my full body of work on"
     zh: "閱讀我的完整作品於"
-  items:
-    - category: "Strategy"
-      title:
-        en: "Redefining Work in the Age of AI: The Hardest Part Isn’t the Technology"
-        zh: "重定義 AI 時代的工作：最難的不是技術"
-      meta:
-        en: "What building AI with clients has taught me about value, empathy, and what truly scales"
-        zh: "與客戶建立 AI 的經驗教會了我什麼是價值、同理心，以及什麼才是真正可擴展的"
-      url: "https://vivian-ku.medium.com/redefining-work-in-the-age-of-ai-the-hardest-part-isnt-the-technology-3361abf3b341"
-    - category: "Strategy"
-      title:
-        en: "Generative AI vs. Traditional AI: A Guide to Understanding the Differences"
-        zh: "生成式 AI vs. 傳統 AI：理解差異指南"
-      meta:
-        en: "A strategic breakdown of how generative models differ from predictive systems and what it means for enterprise adoption."
-        zh: "策略性拆解生成式模型與預測系統的差異，以及其對企業採用的意義。"
-      url: "https://vivian-ku.medium.com/generative-ai-vs-traditional-ai-a-beginners-guide-to-understanding-the-differences-f39923f3127f"
-    - category: "Infrastructure"
-      title:
-        en: "Decoding the Digital Twin: Understanding its Anatomy"
-        zh: "解碼數位分身：了解其解剖結構"
-      meta:
-        en: "Navigating the synergy of IoT, Edge Computing, and digital replicas in asset-intensive industries."
-        zh: "探索 IoT、邊緣運算與數位分身在資產密集型產業中的綜效。"
-      url: "https://vivian-ku.medium.com/decoding-the-digital-twin-understanding-its-anatomy-344beb3b5c1f"
-    - category: "Governance"
-      title:
-        en: "Smart City Privacy & Public Trust"
-        zh: "智慧城市隱私與公眾信任"
-      meta:
-        en: "Why some smart city projects fail and how to build systems that protect privacy and foster civic trust."
-        zh: "為什麼有些智慧城市專案會失敗，以及如何建立保護隱私並促進公民信任的系統。"
-      url: "https://vivian-ku.medium.com/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82%E7%82%BA%E4%BB%80%E9%BA%BC%E4%B8%8D%E8%A2%AB%E6%94%AF%E6%8C%81-%E7%9C%8B%E4%B8%8D%E8%A6%8B%E7%9A%84%E7%A7%91%E6%8A%80%E6%9C%80%E5%8F%AF%E6%80%95-%E4%B8%89%E5%80%8B%E4%BF%9D%E8%AD%B7%E9%9A%B1%E7%A7%81%E6%AC%8A%E8%88%87%E5%BB%BA%E7%AB%8B%E5%85%AC%E6%B0%91%E4%BF%A1%E4%BB%BB%E7%9A%84%E5%9C%8B%E9%9A%9B%E6%A1%88%E4%BE%8B-2c39432475ee"
-    - category: "Reflections"
-      title:
-        en: "AI 與數位轉型顧問筆記：五個實戰反思"
-        zh: "AI 與數位轉型顧問筆記：五個實戰反思"
-      meta:
-        en: "Reflections on three years of AI strategy consulting: from mindset shifts to technical execution (Mandarin)."
-        zh: "三年 AI 策略顧問的反思：從思維轉變到技術執行。"
-      url: "https://vivian-ku.medium.com/ai-%E8%88%87%E6%95%B8%E4%BD%8D%E8%BD%89%E5%9E%8B%E9%A1%A7%E5%95%8F%E7%AD%86%E8%A8%98-%E5%9C%A8%E4%B8%89%E5%B9%B4%E7%B6%93%E6%AD%B7%E4%B8%AD%E5%AD%B8%E5%88%B0%E7%9A%84%E4%BA%94%E4%BB%B6%E4%BA%8B-c84a0e178e23"
 
 contact:
   title:

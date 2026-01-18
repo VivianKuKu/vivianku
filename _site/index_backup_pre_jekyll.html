@@ -1,38 +1,30 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang }}">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.data.content.hero.role[page.lang] | strip_html }} | Vivian Ku</title>
-    <meta name="description" content="{{ site.data.content.hero.positioning[page.lang] | strip_html | truncate: 160 }}">
+    <title>Vivian Ku | AI Strategy and Product Leader</title>
+    <meta name="description"
+        content="Vivian Ku is an AI Strategy Consultant, Speaker, and Writer based in the UK. Specializing in responsible AI, decision-making, and human-centred design.">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%25%22 y=%2254%25%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2270%22>VK</text></svg>">
 
-    <!-- Google Analytics -->
-    {% if site.google_analytics %}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', '{{ site.google_analytics }}');
-    </script>
-    {% endif %}
-
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/">
-    <meta property="og:title" content="Vivian Ku | {{ site.data.content.hero.role[page.lang] | strip_html }}">
-    <meta property="og:description" content="{{ site.data.content.hero.positioning[page.lang] | strip_html }}">
-    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/asset/social_preview.png">
+    <meta property="og:url" content="https://viviankuku.github.io/vivianku/">
+    <meta property="og:title" content="Vivian Ku | AI Strategy and Product Leader">
+    <meta property="og:description"
+        content="AI Strategist and Product Manager helping organizations turn emerging technology into products and decisions people can trust. By sharing my journey through talks, writing, and community, I help individuals navigate the AI era with confidence.">
+    <meta property="og:image" content="https://viviankuku.github.io/vivianku/asset/social_preview.png">
 
     <!-- Canonical & Identity -->
-    <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/">
+    <link rel="canonical" href="https://viviankuku.github.io/vivianku/">
     <link rel="me" href="https://linkedin.com/in/vivianku">
     <link rel="me" href="https://medium.com/@vivian-ku">
     <link rel="me" href="https://www.threads.com/@viviankuku">
+
+
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,15 +46,20 @@
             --accent-color: #4A5A6A;
             /* Calm Slate Blue */
             --accent-soft: #E8ECEF;
-            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-headings: 'Playfair Display', serif;
-            --max-width: 720px;
-            --spacing-unit: 1.5rem;
+
+            /* Sophisticated Palette */
             --accent-terracotta: #b47b5e;
             --accent-sage: #5d7465;
             --accent-blue-deep: #2c3e50;
+
             --border-color: rgba(0, 0, 0, 0.08);
             --card-bg: rgba(255, 255, 255, 0.5);
+            /* More transparent for glass effect */
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-headings: 'Playfair Display', serif;
+            --max-width: 720px;
+            /* Slightly wider for editorial feel */
+            --spacing-unit: 1.5rem;
         }
 
         * {
@@ -74,6 +71,7 @@
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 6rem;
+            /* Offset for floating nav */
         }
 
         body {
@@ -82,6 +80,7 @@
             background-image: url('background.png');
             background-size: 600px;
             background-repeat: repeat;
+            /* Subtle overlay to ensure readability */
             background-blend-mode: multiply;
             color: var(--text-primary);
             line-height: 1.7;
@@ -123,6 +122,7 @@
             border-radius: 50%;
             filter: blur(100px);
             opacity: 0.15;
+            /* Increased from 0.12 */
             mix-blend-mode: multiply;
         }
 
@@ -163,6 +163,7 @@
             }
         }
 
+        /* Animations */
         @keyframes fadeUp {
             from {
                 opacity: 0;
@@ -180,6 +181,7 @@
             color: var(--text-primary);
         }
 
+        /* Reveal Animation Base */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -192,6 +194,7 @@
             transform: translateY(0);
         }
 
+        /* Color Zoning */
         #about.reveal-visible {
             background: radial-gradient(circle at 100% 0%, rgba(180, 123, 94, 0.06), transparent 40%);
         }
@@ -204,6 +207,7 @@
             background: radial-gradient(circle at 50% 50%, rgba(93, 116, 101, 0.06), transparent 60%);
         }
 
+        /* Layout */
         main {
             max-width: var(--max-width);
             margin: 0 auto;
@@ -224,12 +228,14 @@
             margin-bottom: 6rem;
             position: relative;
             background: rgba(0, 0, 0, 0.012);
+            /* Extremely subtle tint */
             padding: 4rem 2rem;
             margin-left: -2rem;
             margin-right: -2rem;
             border-radius: 20px;
         }
 
+        /* Subtle Hero Separator */
         header::after {
             content: "";
             position: absolute;
@@ -251,6 +257,7 @@
             animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        /* Drop Cap Styling */
         .drop-cap::first-letter {
             float: left;
             font-family: var(--font-headings);
@@ -285,6 +292,7 @@
             letter-spacing: -0.01em;
             border-left: 2px solid var(--accent-color);
             padding-left: 1.5rem;
+            /* Editorial blockquote style */
             animation: fadeUp 0.8s ease-out 0.2s backwards;
         }
 
@@ -336,6 +344,7 @@
             margin-bottom: 0;
         }
 
+
         .mission-callout {
             margin-top: 3rem;
             background: rgba(180, 123, 94, 0.04);
@@ -367,6 +376,7 @@
             }
         }
 
+        /* Utility classes for responsive text */
         .mobile-text {
             display: none;
         }
@@ -379,9 +389,12 @@
             .mobile-text {
                 display: inline;
             }
+        }
 
+        @media (max-width: 600px) {
             html {
                 scroll-padding-top: 8rem;
+                /* Increased offset for mobile to prevent title overlap */
             }
 
             .positioning {
@@ -393,6 +406,7 @@
                 font-size: 2.25rem;
             }
 
+            /* Mobile-adaptive floating navigation - single row */
             .nav-container {
                 top: 1rem;
                 left: 0.2rem;
@@ -405,19 +419,24 @@
                 width: auto;
                 max-width: 100%;
                 flex-wrap: nowrap;
+                /* Keep in one row */
                 justify-content: center;
                 gap: 0;
                 padding: 0.3rem 0.2rem;
                 font-size: 0.65rem;
+                /* Smaller font for mobile */
+                letter-spacing: 0.02em;
             }
 
             .primary-links a {
                 padding: 0.4rem 0.6rem;
                 white-space: nowrap;
                 flex: 0 1 auto;
+                /* Do not force growth, allow natural size */
                 text-align: center;
             }
         }
+
 
         h2 {
             font-family: var(--font-main);
@@ -439,6 +458,7 @@
             background: var(--border-color);
         }
 
+        /* Main Nav / Primary Links - Floating Edition Refined */
         .nav-container {
             position: fixed;
             top: 2rem;
@@ -448,6 +468,7 @@
             justify-content: center;
             z-index: 10000;
             pointer-events: none;
+            /* Let clicks pass through to content below if not over the nav */
         }
 
         .primary-links {
@@ -468,6 +489,7 @@
             letter-spacing: 0.08em;
             width: max-content;
             pointer-events: auto;
+            /* Re-enable clicks for the nav itself */
         }
 
         .primary-links a {
@@ -483,6 +505,7 @@
             color: white;
         }
 
+        /* Portrait */
         .portrait-container {
             margin-bottom: 3rem;
             animation: fadeUp 0.8s ease-out backwards;
@@ -498,14 +521,17 @@
             display: block;
         }
 
-        .lang-link {
+        /* Language Toggle - DISABLED */
+        .lang-toggle {
             position: fixed;
+            /* Fixed ensures it stays in top-right even when scrolling */
             top: 2rem;
             right: 2rem;
             font-family: var(--font-main);
             font-size: 0.9rem;
             cursor: pointer;
             z-index: 1000;
+            /* High z-index to stay on top of everything */
             color: var(--text-secondary);
             border: 1px solid var(--border-color);
             padding: 0.5rem 1rem;
@@ -513,15 +539,18 @@
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(4px);
             transition: all 0.2s ease;
-            text-decoration: none;
+            display: none;
+            /*"none": don't show translation toggle; Hide this line to show translation toggle */
+            /* Feature Disabled */
         }
 
-        .lang-link:hover {
+        .lang-toggle:hover {
             color: var(--text-primary);
             border-color: var(--text-primary);
             background: rgba(255, 255, 255, 0.8);
         }
 
+        /* Back to Top Button */
         .back-to-top {
             position: fixed;
             bottom: 2rem;
@@ -563,12 +592,14 @@
             fill: currentColor;
         }
 
-        /* Chat Widget Styles - Copied directly */
+        /* AI Chatbot Widget */
         .chat-widget {
             position: fixed;
             bottom: 2rem;
             right: 6rem;
+            /* Left of the Back to Top button */
             z-index: 10001;
+            /* Above navigation (10000) */
             font-family: var(--font-main);
         }
 
@@ -648,6 +679,7 @@
             cursor: pointer;
             opacity: 0.5;
             transition: opacity 0.2s;
+            /* Improved touch target */
             width: 44px;
             height: 44px;
             display: flex;
@@ -655,11 +687,13 @@
             justify-content: center;
             font-size: 1.2rem;
             margin-right: -10px;
+            /* Compensation for the larger click area */
         }
 
         .chat-close:hover {
             opacity: 1;
             background: rgba(0, 0, 0, 0.05);
+            /* Subtle feedback */
             border-radius: 50%;
         }
 
@@ -724,6 +758,7 @@
             transform: translateX(4px);
         }
 
+        /* Typing Indicator */
         .typing {
             display: flex;
             gap: 4px;
@@ -777,6 +812,8 @@
             }
         }
 
+
+        /* What I Bring */
         .cards-grid {
             display: flex;
             flex-direction: column;
@@ -802,6 +839,7 @@
             border-color: var(--border-color);
         }
 
+        /* Unique card tints on hover */
         .card:nth-child(1):hover {
             border-color: var(--accent-color);
             background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(74, 90, 106, 0.05));
@@ -856,6 +894,7 @@
             font-weight: bold;
         }
 
+        /* Selected Writing - Typography-First List */
         .writing-list {
             list-style: none;
             padding: 0;
@@ -885,6 +924,7 @@
 
         .writing-item:hover {
             border-color: var(--accent-terracotta);
+            /* Cycle through colors if needed, but terra looks great as a lead */
         }
 
         .writing-category {
@@ -955,6 +995,7 @@
             }
         }
 
+        /* Load More Button */
         .writing-item.hidden {
             display: none;
         }
@@ -985,6 +1026,7 @@
             background: rgba(255, 255, 255, 0.5);
         }
 
+        /* Footer / Contact */
         footer {
             margin-top: 10rem;
             padding-top: 3rem;
@@ -1034,6 +1076,27 @@
             fill: currentColor;
         }
     </style>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Vivian Ku",
+      "jobTitle": ["AI Strategy Consultant", "Speaker", "Writer"],
+      "description": "AI Strategy Consultant helping organizations navigate the intersection of artificial intelligence and human judgment.",
+      "url": "https://vivianku.com",
+      "sameAs": [
+        "https://linkedin.com/in/vivianku",
+        "https://medium.com/@vivianku"
+      ],
+      "knowsAbout": ["AI Strategy", "Responsible AI", "Decision Making", "Human-Centred Design"],
+      "homeLocation": {
+        "@type": "Place",
+        "name": "United Kingdom"
+      }
+    }
+    </script>
 </head>
 
 <body>
@@ -1043,121 +1106,195 @@
         <div class="orb orb-3"></div>
     </div>
 
-    <!-- Language Toggle Link -->
-    {% comment %}
-    {% if page.lang == "en" %}
-    <a href="{{ site.url }}{{ site.baseurl }}/zh/" class="lang-link">EN / 中</a>
-    {% else %}
-    <a href="{{ site.url }}{{ site.baseurl }}/" class="lang-link">中 / EN</a>
-    {% endif %}
-    {% endcomment %}
+    <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch Language">EN / 中</button>
+
+
 
     <main>
+        <!-- Hero Section -->
         <header>
             <div class="portrait-container">
-                <img src="{{ site.url }}{{ site.baseurl }}/asset/portrait_placeholder.jpg" alt="Vivian Ku Portrait"
-                    class="portrait" width="80" height="80">
+                <!-- User should replace this image -->
+                <img src="asset/portrait_placeholder.jpg" alt="Vivian Ku Portrait" class="portrait" width="80"
+                    height="80">
             </div>
 
             <h1>Vivian Ku</h1>
-            <div class="role-list">{{ site.data.content.hero.role[page.lang] }}</div>
+            <div class="role-list" data-zh=" ">AI Strategy <span class="amp">&</span> Product Leader</div>
 
-            <p class="positioning">{{ site.data.content.hero.positioning[page.lang] }}</p>
+            <!-- <p class="positioning" data-zh="我協助領導者駕馭 AI 時代的轉型。我的工作專注於策略、負責任的部署，以及人類判斷在自動化系統中的關鍵角色。">
+                I help leaders navigate the transition to the AI era. My work focuses on strategy, responsible
+                deployment, and the critical role of human judgment in automated systems.
+            </p> -->
+
+
+            <p class="positioning" data-zh="">
+                I work at the intersection of AI, strategy, and human judgment. I help organisations turn emerging
+                technology into products and decisions people can trust.
+            </p>
 
             <div class="nav-container">
                 <nav class="primary-links">
-                    <a href="#about">{{ site.data.content.nav.about[page.lang] }}</a>
-                    <a href="#work"><span class="desktop-text">{{ site.data.content.nav.work[page.lang] }}</span><span
-                            class="mobile-text">{{ site.data.content.nav.work_mobile[page.lang] }}</span></a>
-                    <a href="#writing">{{ site.data.content.nav.writing[page.lang] }}</a>
-                    <a href="#contact"><span class="desktop-text">{{ site.data.content.nav.connect[page.lang]
-                            }}</span><span class="mobile-text">{{ site.data.content.nav.connect_mobile[page.lang]
-                            }}</span></a>
+                    <a href="#about" data-zh="關於我">About</a>
+                    <a href="#work" data-zh="服務項目"><span class="desktop-text">What I Do</span><span
+                            class="mobile-text">Work</span></a>
+                    <a href="#writing" data-zh="精選文章">Writing</a>
+                    <a href="#contact" data-zh="合作洽談 / 演講邀約"><span class="desktop-text">Let's Connect</span><span
+                            class="mobile-text">Connect</span></a>
                 </nav>
             </div>
         </header>
 
+        <!-- Who I Am Section -->
         <section id="about" class="reveal" style="position: relative; padding-left: 0.5rem;">
-            <h2>{{ site.data.content.about.title[page.lang] }}</h2>
+            <h2 data-zh="關於我">ABOUT ME</h2>
             <div class="about-grid">
                 <div class="about-main">
-                    <p class="drop-cap">{{ site.data.content.about.main.p1[page.lang] }}</p>
-                    <p>{{ site.data.content.about.main.p2[page.lang] }}</p>
+                    <p class="drop-cap">
+                        I’m an AI Strategist and Product Manager, specialising in building AI-driven products for
+                        asset-intensive industries such as
+                        smart cities, energy, and manufacturing.
+                    </p>
+                    <p>
+                        I work across the full product lifecycle—from problem framing and strategy to delivery and
+                        adoption—translating AI capabilities into products that support real operational and strategic
+                        decisions.
+                    </p>
                     <div class="mission-callout">
-                        <p>{{ site.data.content.about.mission[page.lang] }}</p>
+                        <p>I share my journey through talks, writing, and community—helping people navigate the AI era
+                            with clarity and confidence.</p>
                     </div>
                 </div>
 
                 <div class="about-pillars">
                     <div class="pillar-item">
-                        <span class="pillar-label">{{ site.data.content.about.pillars.speaking.label[page.lang]
-                            }}</span>
-                        <div class="pillar-text">{{ site.data.content.about.pillars.speaking.text[page.lang] }}</div>
+                        <span class="pillar-label">Public Speaking</span>
+                        <div class="pillar-text">TEDx Speaker (Dec 2025, Taipei)</div>
                     </div>
                     <div class="pillar-item">
-                        <span class="pillar-label">{{ site.data.content.about.pillars.community.label[page.lang]
-                            }}</span>
-                        <div class="pillar-text">{{ site.data.content.about.pillars.community.text[page.lang] }}</div>
+                        <span class="pillar-label">Leadership & Community</span>
+                        <div class="pillar-text">
+                            <p>AI <span class="amp">&</span> Data Meetup @ London (Organiser)</p>
+                            <p>Tech London Advocate — Taiwan Working Group (Volunteer)</p>
+                        </div>
                     </div>
                     <div class="pillar-item">
-                        <span class="pillar-label">{{ site.data.content.about.pillars.location.label[page.lang]
-                            }}</span>
-                        <div class="pillar-text">{{ site.data.content.about.pillars.location.text[page.lang] }}</div>
+                        <span class="pillar-label">Based In</span>
+                        <div class="pillar-text" data-zh="倫敦 / 台灣">London, UK / Taiwan</div>
                     </div>
                 </div>
             </div>
+
         </section>
 
+        <!-- What I Bring Section -->
         <section id="work" class="reveal">
-            <h2>{{ site.data.content.work.title[page.lang] }}</h2>
+            <h2 data-zh="服務項目">What I Do</h2>
             <div class="cards-grid">
-                {% for card in site.data.content.work.cards %}
                 <div class="card">
-                    <h3>{{ card.title[page.lang] }}</h3>
-                    <p>{{ card.desc[page.lang] }}</p>
+                    <h3 data-zh="AI 產品管理">AI Product Management</h3>
+                    <p data-zh="結合敏捷開發與以人為本的設計。">I translate complex AI capabilities into products people actually
+                        use—balancing technical feasibility, human needs, and organisational constraints.</p>
                     <ul>
-                        {% for item in card.items[page.lang] %}
-                        <li>{{ item }}</li>
-                        {% endfor %}
+                        <li>AI product strategy & roadmaps</li>
+                        <li>Agile & lean delivery</li>
+                        <li>Human-centred AI design</li>
                     </ul>
                 </div>
-                {% endfor %}
+                <div class="card">
+                    <h3 data-zh="AI 策略與治理">AI Strategy & Governance</h3>
+                    <p data-zh="為高階管理團隊提供 AI 策略與治理架構。">I help organisations define AI strategies that are scalable,
+                        responsible, and aligned with real business decisions—from governance models to execution
+                        roadmaps.</p>
+                    <ul>
+                        <li>AI strategy & operating models</li>
+                        <li>Responsible AI & governance frameworks</li>
+                        <li>Public sector & enterprise adoption</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 data-zh="以人為本的變革">Human-Centred Change</h3>
+                    <p data-zh="培養同理心與持續改善的文化。">Technology only works when people trust it. I focus on adoption,
+                        sense-making, and team empowerment—so AI creates lasting change, not resistance.</p>
+                    <ul>
+                        <li>Design thinking & user research</li>
+                        <li>Change management</li>
+                        <li>Team empowerment</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
+        <!-- Selected Writing Section -->
         <section id="writing" class="reveal">
-            <h2>{{ site.data.content.writing.title[page.lang] }}</h2>
+            <h2 data-zh="精選文章">Selected Writing</h2>
             <p
                 style="margin-bottom: 2rem; color: var(--text-secondary); font-size: 0.95rem; font-weight: 300; opacity: 0.9;">
-                {{ site.data.content.writing.intro[page.lang] }}
+                I write about AI in the real world—where strategy meets systems, and technology meets human judgment.
                 <br>
-                <span style="font-size: 0.85rem; font-weight: 500; color: var(--accent-color);">{{
-                    site.data.content.writing.link_text[page.lang] }} <a
-                        href="https://vivianku.substack.com/?utm_campaign=profile_chips" target="_blank"
-                        style="border-bottom-color: var(--accent-color); color: var(--accent-color);">The Aperture
-                        Newsletter</a> or
-                    <a href="https://medium.com/@vivian-ku" target="_blank"
+                <span style="font-size: 0.85rem; font-weight: 500; color: var(--accent-color);">Read my full body of
+                    work on <a href="https://medium.com/@vivian-ku" target="_blank"
                         style="border-bottom-color: var(--accent-color); color: var(--accent-color);">Medium</a>.</span>
             </p>
             <ul class="writing-list">
-                {% for post in site.writing | sort: 'order' %}
                 <li class="writing-item">
-                    <a href="{{ post.external_url }}" target="_blank" rel="noopener noreferrer">
-                        <span class="writing-category">{{ post.category }}</span>
-                        <div class="writing-title">{{ post.title[page.lang] }}</div>
-                        <div class="writing-meta">{{ post.meta[page.lang] }}</div>
+                    <a href="https://vivian-ku.medium.com/redefining-work-in-the-age-of-ai-the-hardest-part-isnt-the-technology-3361abf3b341"
+                        target="_blank" rel="noopener noreferrer">
+                        <span class="writing-category">Strategy</span>
+                        <div class="writing-title" data-zh="">Redefining Work in the Age of AI: The Hardest Part Isn’t
+                            the Technology</div>
+                        <div class="writing-meta" data-zh="">What building AI with clients has taught me about value,
+                            empathy, and what truly scales</div>
                     </a>
                 </li>
-                {% endfor %}
+                <li class="writing-item">
+                    <a href="https://vivian-ku.medium.com/generative-ai-vs-traditional-ai-a-beginners-guide-to-understanding-the-differences-f39923f3127f"
+                        target="_blank" rel="noopener noreferrer">
+                        <span class="writing-category">Strategy</span>
+                        <div class="writing-title" data-zh="">Generative AI vs. Traditional AI: A Guide to
+                            Understanding the Differences</div>
+                        <div class="writing-meta" data-zh="">A strategic breakdown of how generative models differ from
+                            predictive systems and what it means for enterprise adoption.</div>
+                    </a>
+                </li>
+                <li class="writing-item">
+                    <a href="https://vivian-ku.medium.com/decoding-the-digital-twin-understanding-its-anatomy-344beb3b5c1f"
+                        target="_blank" rel="noopener noreferrer">
+                        <span class="writing-category">Infrastructure</span>
+                        <div class="writing-title" data-zh="">Decoding the Digital Twin: Understanding its
+                            Anatomy</div>
+                        <div class="writing-meta" data-zh="">Navigating the synergy of IoT, Edge Computing, and digital
+                            replicas in asset-intensive industries.</div>
+                    </a>
+                </li>
+                <li class="writing-item">
+                    <a href="https://vivian-ku.medium.com/%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82%E7%82%BA%E4%BB%80%E9%BA%BC%E4%B8%8D%E8%A2%AB%E6%94%AF%E6%8C%81-%E7%9C%8B%E4%B8%8D%E8%A6%8B%E7%9A%84%E7%A7%91%E6%8A%80%E6%9C%80%E5%8F%AF%E6%80%95-%E4%B8%89%E5%80%8B%E4%BF%9D%E8%AD%B7%E9%9A%B1%E7%A7%81%E6%AC%8A%E8%88%87%E5%BB%BA%E7%AB%8B%E5%85%AC%E6%B0%91%E4%BF%A1%E4%BB%BB%E7%9A%84%E5%9C%8B%E9%9A%9B%E6%A1%88%E4%BE%8B-2c39432475ee"
+                        target="_blank" rel="noopener noreferrer">
+                        <span class="writing-category">Governance</span>
+                        <div class="writing-title" data-zh="">Smart City Privacy & Public Trust</div>
+                        <div class="writing-meta" data-zh="">Why some smart city projects fail and how to build systems
+                            that protect privacy and foster civic trust.</div>
+                    </a>
+                </li>
+                <li class="writing-item">
+                    <a href="https://vivian-ku.medium.com/ai-%E8%88%87%E6%95%B8%E4%BD%8D%E8%BD%89%E5%9E%8B%E9%A1%A7%E5%95%8F%E7%AD%86%E8%A8%98-%E5%9C%A8%E4%B8%89%E5%B9%B4%E7%B6%93%E6%AD%B7%E4%B8%AD%E5%AD%B8%E5%88%B0%E7%9A%84%E4%BA%94%E4%BB%B6%E4%BA%8B-c84a0e178e23"
+                        target="_blank" rel="noopener noreferrer">
+                        <span class="writing-category">Reflections</span>
+                        <div class="writing-title" data-zh="">AI 與數位轉型顧問筆記：五個實戰反思
+                        </div>
+                        <div class="writing-meta" data-zh="">Reflections on three years of AI strategy consulting: from
+                            mindset shifts to technical execution (Mandarin).</div>
+                    </a>
+                </li>
             </ul>
         </section>
 
         <section id="contact" class="reveal" style="margin-bottom: 12rem;">
-            <h2>{{ site.data.content.contact.title[page.lang] }}</h2>
+            <h2 data-zh="合作洽談">Let's Connect</h2>
             <div style="max-width: 42rem;">
                 <p
                     style="font-family: var(--font-headings); font-size: 1.6rem; line-height: 1.4; color: var(--text-primary); margin-bottom: 1.5rem;">
-                    {{ site.data.content.contact.text[page.lang] }}
+                    If my work resonates with you or you’d like to have a chat, I’d love to hear from you.
                 </p>
                 <a href="mailto:vivianku.future@gmail.com"
                     style="font-size: 1.2rem; font-weight: 500; color: var(--text-primary); border-bottom: none; background: none; backdrop-filter: none; padding: 0;">
@@ -1165,9 +1302,12 @@
                 </a>
         </section>
 
+        <!-- Footer Section (Connect) -->
         <footer id="contact" class="reveal">
             <div style="max-width: 25rem;">
-                <p>{{ site.data.content.contact.footer_bio[page.lang] }}</p>
+                <p data-zh="Vivian Ku — 常駐英國的 AI 策略顧問與演講者。撰寫關於 AI、決策與以人為本的系統。">Vivian Ku — AI Product Manager <span
+                        class="amp">&</span> Strategy
+                    Leader. Writing about AI, decision-making, and human-centred systems.</p>
             </div>
 
             <nav class="contact-links">
@@ -1191,13 +1331,6 @@
                             d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
                     </svg>
                 </a>
-                <a href="https://vivianku.substack.com/?utm_campaign=profile_chips" target="_blank"
-                    rel="noopener noreferrer" aria-label="Substack" title="Substack">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill: currentColor;">
-                        <path
-                            d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
-                    </svg>
-                </a>
                 <a href="https://www.threads.com/@viviankuku" target="_blank" rel="noopener noreferrer"
                     aria-label="Threads" title="Threads">
                     <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" style="width: 18px; height: 18px;">
@@ -1206,6 +1339,7 @@
                     </svg>
                 </a>
             </nav>
+
         </footer>
 
         <button class="back-to-top" aria-label="Back to top">
@@ -1214,8 +1348,12 @@
             </svg>
         </button>
 
+        <!-- AI Chatbot Widget -->
         <div class="chat-widget" id="vivianChat">
-            <button class="chat-trigger" onclick="toggleChat()"><span>✨</span> Digital VK</button>
+            <button class="chat-trigger" onclick="toggleChat()">
+                <span>✨</span> Digital VK
+            </button>
+
             <div class="chat-window" id="chatWindow">
                 <div class="chat-header">
                     <div style="flex: 1;">
@@ -1225,50 +1363,75 @@
                     </div>
                     <span class="chat-close" onclick="toggleChat()">✕</span>
                 </div>
-                <div class="chat-body" id="chatBody"></div>
-                <div class="chat-options" id="chatOptions"></div>
+                <div class="chat-body" id="chatBody">
+                    <!-- Messages will appear here -->
+                </div>
+                <div class="chat-options" id="chatOptions">
+                    <!-- Options will appear here -->
+                </div>
             </div>
         </div>
 
     </main>
 
+
     <script>
+        // Initialise Premium Interactions
         document.addEventListener('DOMContentLoaded', () => {
-            // Clean URL Hash
+            // 0. Clean URL Hash on Load (User Preference)
             if (window.location.hash) {
                 window.history.replaceState(null, null, window.location.pathname);
+                // Optional: Scroll to top if the user wants to reset completely
+                // window.scrollTo(0, 0); 
             }
 
-            // Load More Logic
+            // 0.5 Load More Logic
             const writingItems = document.querySelectorAll('.writing-item');
             const maxVisible = 3;
             if (writingItems.length > maxVisible) {
+                // Hide extra items
                 writingItems.forEach((item, index) => {
                     if (index >= maxVisible) item.classList.add('hidden');
                 });
+
+                // Create container and button
                 const list = document.querySelector('.writing-list');
                 const btnContainer = document.createElement('div');
                 btnContainer.className = 'load-more-container';
+
                 const btn = document.createElement('button');
                 btn.className = 'load-more-btn';
-                btn.innerText = `Show All (${writingItems.length})`;
+                btn.innerText = `Show All (${writingItems.length})`; // e.g. Show All (5)
+
                 btn.onclick = () => {
-                    writingItems.forEach(item => item.classList.remove('hidden'));
-                    btnContainer.remove();
+                    writingItems.forEach(item => {
+                        item.classList.remove('hidden');
+                        // Optional simple fade in effect could be added here
+                    });
+                    btnContainer.remove(); // Remove button after expanding
                 };
+
                 btnContainer.appendChild(btn);
                 list.parentNode.insertBefore(btnContainer, list.nextSibling);
             }
 
-            // Scroll Reveal
+            // 1. Intersection Observer for Scroll Reveals
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) entry.target.classList.add('reveal-visible');
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-visible');
+                    }
                 });
-            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            }, observerOptions);
+
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-            // Navigation State
+            // 2. Navigation Scroll State
             const nav = document.querySelector('.primary-links');
             if (nav) {
                 window.addEventListener('scroll', () => {
@@ -1285,23 +1448,56 @@
             }
         });
 
-        // Back to Top
+        function toggleLanguage() {
+            const elements = document.querySelectorAll('[data-zh]');
+            const btn = document.querySelector('.lang-toggle');
+            const isEnglish = btn.innerText.includes('EN');
+
+            elements.forEach(el => {
+                const zhText = el.getAttribute('data-zh');
+
+                if (isEnglish) {
+                    // Store current English text if not already stored
+                    if (!el.getAttribute('data-en')) {
+                        el.setAttribute('data-en', el.innerText);
+                    }
+                    el.innerText = zhText;
+                } else {
+                    // Revert to English
+                    const enText = el.getAttribute('data-en');
+                    if (enText) {
+                        el.innerText = enText;
+                    }
+                }
+            });
+
+            // Toggle button text
+            btn.innerText = isEnglish ? "中 / EN" : "EN / 中";
+        }
+
+        /* Back to Top Logic */
         const backToTopBtn = document.querySelector('.back-to-top');
+
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) backToTopBtn.classList.add('visible');
-            else backToTopBtn.classList.remove('visible');
-        });
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
         });
 
-        // Chat Logic
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        /* AI Chatbot Logic */
         const chatWindow = document.getElementById('chatWindow');
         const chatBody = document.getElementById('chatBody');
         const chatOptions = document.getElementById('chatOptions');
         let chatOpen = false;
 
-        // Chat Data - We can keep this in JS for now as it's interactive
         const chatData = {
             start: {
                 message: "I'm so glad you're here! I'd love to share a bit more about my work and how I see the AI era. What would you like to explore together?",
@@ -1369,10 +1565,13 @@
         async function renderStep(stepId) {
             chatOptions.innerHTML = '';
             const step = chatData[stepId];
+
+            // Special Actions
             if (stepId === 'contact') { window.location.hash = 'contact'; toggleChat(); return; }
             if (stepId === 'scrollToWork') { window.location.hash = 'work'; toggleChat(); return; }
             if (stepId === 'scrollToAbout') { window.location.hash = 'about'; toggleChat(); return; }
 
+            // Bot Typing
             const typingDiv = document.createElement('div');
             typingDiv.className = 'message bot typing-indicator';
             typingDiv.innerHTML = '<div class="typing"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>';
@@ -1381,8 +1580,11 @@
 
             await new Promise(r => setTimeout(r, 1000));
             chatBody.removeChild(typingDiv);
+
+            // Bot Message
             addMessage(step.message, 'bot');
 
+            // Options
             step.options.forEach(opt => {
                 const btn = document.createElement('button');
                 btn.className = 'opt-btn';
@@ -1397,7 +1599,6 @@
                 };
                 chatOptions.appendChild(btn);
             });
-            chatBody.scrollTop = chatBody.scrollHeight;
         }
 
         function addMessage(text, sender) {
@@ -1405,7 +1606,9 @@
             div.className = `message ${sender}`;
             div.innerText = text;
             chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
         }
+
     </script>
 </body>
 

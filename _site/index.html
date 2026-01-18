@@ -1,35 +1,35 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang }}">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.data.content.hero.role[page.lang] | strip_html }} | Vivian Ku</title>
-    <meta name="description" content="{{ site.data.content.hero.positioning[page.lang] | strip_html | truncate: 160 }}">
+    <title>AI Strategy & Product Leader | Vivian Ku</title>
+    <meta name="description" content="I work at the intersection of AI, strategy, and human judgment. I help organisations turn emerging technology into products and decisions people can trust.">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%25%22 y=%2254%25%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2270%22>VK</text></svg>">
 
     <!-- Google Analytics -->
-    {% if site.google_analytics %}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PD8HRG94M"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        gtag('config', '{{ site.google_analytics }}');
+        gtag('config', 'G-9PD8HRG94M');
     </script>
-    {% endif %}
+    
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/">
-    <meta property="og:title" content="Vivian Ku | {{ site.data.content.hero.role[page.lang] | strip_html }}">
-    <meta property="og:description" content="{{ site.data.content.hero.positioning[page.lang] | strip_html }}">
-    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/asset/social_preview.png">
+    <meta property="og:url" content="http://localhost:4000/vivianku/">
+    <meta property="og:title" content="Vivian Ku | AI Strategy & Product Leader">
+    <meta property="og:description" content="I work at the intersection of AI, strategy, and human judgment. I help organisations turn emerging technology into products and decisions people can trust.">
+    <meta property="og:image" content="http://localhost:4000/vivianku/asset/social_preview.png">
 
     <!-- Canonical & Identity -->
-    <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/">
+    <link rel="canonical" href="http://localhost:4000/vivianku/">
     <link rel="me" href="https://linkedin.com/in/vivianku">
     <link rel="me" href="https://medium.com/@vivian-ku">
     <link rel="me" href="https://www.threads.com/@viviankuku">
@@ -1044,95 +1044,115 @@
     </div>
 
     <!-- Language Toggle Link -->
-    {% comment %}
-    {% if page.lang == "en" %}
-    <a href="{{ site.url }}{{ site.baseurl }}/zh/" class="lang-link">EN / 中</a>
-    {% else %}
-    <a href="{{ site.url }}{{ site.baseurl }}/" class="lang-link">中 / EN</a>
-    {% endif %}
-    {% endcomment %}
+    
 
     <main>
         <header>
             <div class="portrait-container">
-                <img src="{{ site.url }}{{ site.baseurl }}/asset/portrait_placeholder.jpg" alt="Vivian Ku Portrait"
+                <img src="http://localhost:4000/vivianku/asset/portrait_placeholder.jpg" alt="Vivian Ku Portrait"
                     class="portrait" width="80" height="80">
             </div>
 
             <h1>Vivian Ku</h1>
-            <div class="role-list">{{ site.data.content.hero.role[page.lang] }}</div>
+            <div class="role-list">AI Strategy <span class="amp">&</span> Product Leader</div>
 
-            <p class="positioning">{{ site.data.content.hero.positioning[page.lang] }}</p>
+            <p class="positioning">I work at the intersection of AI, strategy, and human judgment. I help organisations turn emerging technology into products and decisions people can trust.</p>
 
             <div class="nav-container">
                 <nav class="primary-links">
-                    <a href="#about">{{ site.data.content.nav.about[page.lang] }}</a>
-                    <a href="#work"><span class="desktop-text">{{ site.data.content.nav.work[page.lang] }}</span><span
-                            class="mobile-text">{{ site.data.content.nav.work_mobile[page.lang] }}</span></a>
-                    <a href="#writing">{{ site.data.content.nav.writing[page.lang] }}</a>
-                    <a href="#contact"><span class="desktop-text">{{ site.data.content.nav.connect[page.lang]
-                            }}</span><span class="mobile-text">{{ site.data.content.nav.connect_mobile[page.lang]
-                            }}</span></a>
+                    <a href="#about">About</a>
+                    <a href="#work"><span class="desktop-text">What I Do</span><span
+                            class="mobile-text">Work</span></a>
+                    <a href="#writing">Writing</a>
+                    <a href="#contact"><span class="desktop-text">Let's Connect</span><span class="mobile-text">Connect</span></a>
                 </nav>
             </div>
         </header>
 
         <section id="about" class="reveal" style="position: relative; padding-left: 0.5rem;">
-            <h2>{{ site.data.content.about.title[page.lang] }}</h2>
+            <h2>ABOUT ME</h2>
             <div class="about-grid">
                 <div class="about-main">
-                    <p class="drop-cap">{{ site.data.content.about.main.p1[page.lang] }}</p>
-                    <p>{{ site.data.content.about.main.p2[page.lang] }}</p>
+                    <p class="drop-cap">I’m an AI Strategist and Product Manager, specialising in building AI-driven products for asset-intensive industries such as smart cities, energy, and manufacturing.</p>
+                    <p>I work across the full product lifecycle—from problem framing and strategy to delivery and adoption—translating AI capabilities into products that support real operational and strategic decisions.</p>
                     <div class="mission-callout">
-                        <p>{{ site.data.content.about.mission[page.lang] }}</p>
+                        <p>I share my journey through talks, writing, and community—helping people navigate the AI era with clarity and confidence.</p>
                     </div>
                 </div>
 
                 <div class="about-pillars">
                     <div class="pillar-item">
-                        <span class="pillar-label">{{ site.data.content.about.pillars.speaking.label[page.lang]
-                            }}</span>
-                        <div class="pillar-text">{{ site.data.content.about.pillars.speaking.text[page.lang] }}</div>
+                        <span class="pillar-label">Public Speaking</span>
+                        <div class="pillar-text">TEDx Speaker (Dec 2025, Taipei)</div>
                     </div>
                     <div class="pillar-item">
-                        <span class="pillar-label">{{ site.data.content.about.pillars.community.label[page.lang]
-                            }}</span>
-                        <div class="pillar-text">{{ site.data.content.about.pillars.community.text[page.lang] }}</div>
+                        <span class="pillar-label">Leadership & Community</span>
+                        <div class="pillar-text"><p>AI <span class="amp">&</span> Data Meetup @ London (Organiser)</p><p>Tech London Advocate — Taiwan Working Group (Volunteer)</p></div>
                     </div>
                     <div class="pillar-item">
-                        <span class="pillar-label">{{ site.data.content.about.pillars.location.label[page.lang]
-                            }}</span>
-                        <div class="pillar-text">{{ site.data.content.about.pillars.location.text[page.lang] }}</div>
+                        <span class="pillar-label">Based In</span>
+                        <div class="pillar-text">London, UK / Taiwan</div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="work" class="reveal">
-            <h2>{{ site.data.content.work.title[page.lang] }}</h2>
+            <h2>What I Do</h2>
             <div class="cards-grid">
-                {% for card in site.data.content.work.cards %}
+                
                 <div class="card">
-                    <h3>{{ card.title[page.lang] }}</h3>
-                    <p>{{ card.desc[page.lang] }}</p>
+                    <h3>AI Product Management</h3>
+                    <p>I translate complex AI capabilities into products people actually use—balancing technical feasibility, human needs, and organisational constraints.</p>
                     <ul>
-                        {% for item in card.items[page.lang] %}
-                        <li>{{ item }}</li>
-                        {% endfor %}
+                        
+                        <li>AI product strategy & roadmaps</li>
+                        
+                        <li>Agile & lean delivery</li>
+                        
+                        <li>Human-centred AI design</li>
+                        
                     </ul>
                 </div>
-                {% endfor %}
+                
+                <div class="card">
+                    <h3>AI Strategy & Governance</h3>
+                    <p>I help organisations define AI strategies that are scalable, responsible, and aligned with real business decisions—from governance models to execution roadmaps.</p>
+                    <ul>
+                        
+                        <li>AI strategy & operating models</li>
+                        
+                        <li>Responsible AI & governance frameworks</li>
+                        
+                        <li>Public sector & enterprise adoption</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>Human-Centred Change</h3>
+                    <p>Technology only works when people trust it. I focus on adoption, sense-making, and team empowerment—so AI creates lasting change, not resistance.</p>
+                    <ul>
+                        
+                        <li>Design thinking & user research</li>
+                        
+                        <li>Change management</li>
+                        
+                        <li>Team empowerment</li>
+                        
+                    </ul>
+                </div>
+                
             </div>
         </section>
 
         <section id="writing" class="reveal">
-            <h2>{{ site.data.content.writing.title[page.lang] }}</h2>
+            <h2>Selected Writing</h2>
             <p
                 style="margin-bottom: 2rem; color: var(--text-secondary); font-size: 0.95rem; font-weight: 300; opacity: 0.9;">
-                {{ site.data.content.writing.intro[page.lang] }}
+                I write about AI in the real world—where strategy meets systems, and technology meets human judgment.
                 <br>
-                <span style="font-size: 0.85rem; font-weight: 500; color: var(--accent-color);">{{
-                    site.data.content.writing.link_text[page.lang] }} <a
+                <span style="font-size: 0.85rem; font-weight: 500; color: var(--accent-color);">Read my full body of work on <a
                         href="https://vivianku.substack.com/?utm_campaign=profile_chips" target="_blank"
                         style="border-bottom-color: var(--accent-color); color: var(--accent-color);">The Aperture
                         Newsletter</a> or
@@ -1140,24 +1160,72 @@
                         style="border-bottom-color: var(--accent-color); color: var(--accent-color);">Medium</a>.</span>
             </p>
             <ul class="writing-list">
-                {% for post in site.writing | sort: 'order' %}
+                
                 <li class="writing-item">
-                    <a href="{{ post.external_url }}" target="_blank" rel="noopener noreferrer">
-                        <span class="writing-category">{{ post.category }}</span>
-                        <div class="writing-title">{{ post.title[page.lang] }}</div>
-                        <div class="writing-meta">{{ post.meta[page.lang] }}</div>
+                    <a href="/writing/ai-wont-take-responsibility/" target="_blank" rel="noopener noreferrer">
+                        <span class="writing-category">Product</span>
+                        <div class="writing-title">AI Won’t Take Responsibility. Your AI Product Does.</div>
+                        <div class="writing-meta">Why Old Metrics Kill Adoption and How Product Manager Can Fix It</div>
                     </a>
                 </li>
-                {% endfor %}
+                
+                <li class="writing-item">
+                    <a href="/writing/consulting-reflections/" target="_blank" rel="noopener noreferrer">
+                        <span class="writing-category">Reflections</span>
+                        <div class="writing-title">AI 與數位轉型顧問筆記：五個實戰反思</div>
+                        <div class="writing-meta">Reflections on three years of AI strategy consulting: from mindset shifts to technical execution (Mandarin).</div>
+                    </a>
+                </li>
+                
+                <li class="writing-item">
+                    <a href="/writing/decoding-digital-twin/" target="_blank" rel="noopener noreferrer">
+                        <span class="writing-category">Infrastructure</span>
+                        <div class="writing-title">Decoding the Digital Twin: Understanding its Anatomy</div>
+                        <div class="writing-meta">Navigating the synergy of IoT, Edge Computing, and digital replicas in asset-intensive industries.</div>
+                    </a>
+                </li>
+                
+                <li class="writing-item">
+                    <a href="/writing/generative-vs-traditional-ai/" target="_blank" rel="noopener noreferrer">
+                        <span class="writing-category">Strategy</span>
+                        <div class="writing-title">Generative AI vs. Traditional AI: A Guide to Understanding the Differences</div>
+                        <div class="writing-meta">A strategic breakdown of how generative models differ from predictive systems and what it means for enterprise adoption.</div>
+                    </a>
+                </li>
+                
+                <li class="writing-item">
+                    <a href="/writing/i-dont-admire-ai/" target="_blank" rel="noopener noreferrer">
+                        <span class="writing-category">Strategy</span>
+                        <div class="writing-title">I Don't Admire AI. I Admire People who Build with AI.</div>
+                        <div class="writing-meta">Lessons from the Harry Potter Films: Why Human Ingenuity is the True Magic in the Age of AI</div>
+                    </a>
+                </li>
+                
+                <li class="writing-item">
+                    <a href="/writing/redefining-work/" target="_blank" rel="noopener noreferrer">
+                        <span class="writing-category">Strategy</span>
+                        <div class="writing-title">Redefining Work in the Age of AI: The Hardest Part Isn’t the Technology</div>
+                        <div class="writing-meta">What building AI with clients has taught me about value, empathy, and what truly scales</div>
+                    </a>
+                </li>
+                
+                <li class="writing-item">
+                    <a href="/writing/smart-city-privacy/" target="_blank" rel="noopener noreferrer">
+                        <span class="writing-category">Governance</span>
+                        <div class="writing-title">Smart City Privacy & Public Trust</div>
+                        <div class="writing-meta">Why some smart city projects fail and how to build systems that protect privacy and foster civic trust.</div>
+                    </a>
+                </li>
+                
             </ul>
         </section>
 
         <section id="contact" class="reveal" style="margin-bottom: 12rem;">
-            <h2>{{ site.data.content.contact.title[page.lang] }}</h2>
+            <h2>Let's Connect</h2>
             <div style="max-width: 42rem;">
                 <p
                     style="font-family: var(--font-headings); font-size: 1.6rem; line-height: 1.4; color: var(--text-primary); margin-bottom: 1.5rem;">
-                    {{ site.data.content.contact.text[page.lang] }}
+                    If my work resonates with you or you’d like to have a chat, I’d love to hear from you.
                 </p>
                 <a href="mailto:vivianku.future@gmail.com"
                     style="font-size: 1.2rem; font-weight: 500; color: var(--text-primary); border-bottom: none; background: none; backdrop-filter: none; padding: 0;">
@@ -1167,7 +1235,7 @@
 
         <footer id="contact" class="reveal">
             <div style="max-width: 25rem;">
-                <p>{{ site.data.content.contact.footer_bio[page.lang] }}</p>
+                <p>Vivian Ku — AI Product Manager <span class="amp">&</span> Strategy Leader. Writing about AI, decision-making, and human-centred systems.</p>
             </div>
 
             <nav class="contact-links">

@@ -7,5 +7,5 @@ title:
 meta:
   en: "Why Old Metrics Kill Adoption and How Product Manager Can Fix It"
   zh: "Why Old Metrics Kill Adoption and How Product Manager Can Fix It"
-url: "https://vivianku.substack.com/p/ai-wont-take-responsibility-your"
+external_url: "https://vivianku.substack.com/p/ai-wont-take-responsibility-your"
 ---

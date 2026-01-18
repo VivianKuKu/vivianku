@@ -1,7 +1,5 @@
 backend:
-  name: github
-  repo: viviankuku/vivianku
-  branch: main
+  name: git-gateway
 
 local_backend: true
 

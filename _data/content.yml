@@ -1,30 +1,30 @@
 nav:
   about:
     en: "About"
-    zh: "關於我"
+    zh: "About"
   work:
     en: "What I Do"
-    zh: "服務項目"
+    zh: "What I Do"
   work_mobile:
     en: "Work"
-    zh: "服務項目"
+    zh: "Work"
   writing:
     en: "Writing"
-    zh: "精選文章"
+    zh: "Writing"
   connect:
     en: "Let's Connect"
-    zh: "合作洽談"
+    zh: "Connect"
   connect_mobile:
     en: "Connect"
-    zh: "合作洽談"
+    zh: "Connect"
 
 hero:
   role:
     en: "AI Strategy <span class=\"amp\">&</span> Product Leader"
-    zh: "AI 策略 <span class=\"amp\">&</span> 產品負責人"
+    zh: "AI 策略 <span class=\"amp\">&</span> AI 產品管理"
   positioning:
-    en: "I work at the intersection of AI, strategy, and human judgment. I help organisations turn emerging technology into products and decisions people can trust."
-    zh: "我協助領導者駕馭 AI 時代的轉型。我的工作專注於策略、負責任的部署，以及人類判斷在自動化系統中的關鍵角色。"
+    en: "I work at the intersection of AI, strategy, and human ingenuity. I help organisations turn emerging technology into products and decisions people can trust."
+    zh: "我協助領導者駕馭 AI 時代的轉型。我的工作專注於策略、負責任的部署，以及人類智慧在自動化系統中的關鍵角色。"
 
 about:
   title:
